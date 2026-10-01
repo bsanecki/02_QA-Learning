@@ -1,49 +1,37 @@
 # QA Learning
 
-Repository containing my learning materials, exercises and projects related to QA / Test Engineering.
+A personal learning repository documenting my journey towards becoming a Junior QA / Test Engineer.
+
+The repository contains practical exercises, projects, notes and learning materials related to software testing, test automation, programming and QA tools.
 
 ## Topics
 
 - Python
 - Pytest
 - SQL
-- REST API
-- Postman
+- Postman & REST API Testing
 - Playwright
 - Appium
-- Git / GitHub
+- Jira
+- Docker
+- QA & Software Testing
 - ISTQB
-- Test Automation
+- Git & GitHub
+- CI/CD
 
 ## Structure
 
-### Python
-Python exercises, notes and small projects.
-
-### Pytest
-Test automation projects and exercises using pytest.
-
-### SQL
-SQL exercises, queries and database-related practice.
-
-### API
-REST API testing and Postman exercises.
-
-### Playwright
-Web UI test automation.
-
-### Appium
-Mobile application test automation.
-
-### Git
-Git and GitHub practice.
-
-### ISTQB
-ISTQB Foundation learning materials and notes.
-
-### Notes
-General QA and programming notes.
+- **01_Python** - Python projects and practical programming
+- **02_Pytest** - pytest exercises and test automation projects
+- **03_SQL** - SQL exercises and database testing projects
+- **04_Postman-API-Testing** - REST API testing with Postman
+- **05_Playwright** - web UI and end-to-end test automation
+- **06_Appium** - mobile test automation
+- **07_Jira** - Jira practice and QA workflows
+- **08_Docker** - Docker and containerization practice
+- **09_QA-Notes** - QA notes and learning materials in Polish and English
+- **10_Certificates** - certificates obtained during the learning process
 
 ## Goal
 
-The goal of this repository is to document my learning process and practical development towards a Junior QA / Test Engineer role.
+The goal of this repository is to document my learning process, build practical skills and develop a strong foundation for a career in QA / Test Engineering.
