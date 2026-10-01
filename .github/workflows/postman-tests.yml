@@ -2,16 +2,13 @@ name: Postman API Tests
 
 on:
   push:
-    paths:
-      - "04_Postman-API-Testing/02_Postman-API-CI-Github-Actions/**"
-      - ".github/workflows/postman-tests.yml"
   pull_request:
-    paths:
-      - "04_Postman-API-Testing/02_Postman-API-CI-Github-Actions/**"
-      - ".github/workflows/postman-tests.yml"
+
+permissions:
+  contents: write
 
 jobs:
-  postman-tests:
+  api-tests:
     runs-on: ubuntu-latest
 
     steps:
@@ -24,9 +21,34 @@ jobs:
           node-version: 20
 
       - name: Install Newman
-        run: npm install -g newman
+        run: npm install -g newman newman-reporter-htmlextra
+
+      - name: Create report directory
+        run: |
+          TIMESTAMP=$(date -u +"%Y-%m-%d_%H-%M-%S")
+          echo "REPORT_DIR=04_Postman-API-Testing/02_Postman-API-CI-Github-Actions/reports/$TIMESTAMP" >> $GITHUB_ENV
+          mkdir -p "04_Postman-API-Testing/02_Postman-API-CI-Github-Actions/reports/$TIMESTAMP"
 
       - name: Run Postman tests
         run: |
-          newman run \
-            "04_Postman-API-Testing/02_Postman-API-CI-Github-Actions/postman-api-ci-cd.postman_collection.json"
+          newman run "04_Postman-API-Testing/02_Postman-API-CI-Github-Actions/postman-api-ci-cd.postman_collection.json" \
+            --reporters cli,json,htmlextra \
+            --reporter-json-export "$REPORT_DIR/results.json" \
+            --reporter-htmlextra-export "$REPORT_DIR/report.html"
+
+      - name: Upload test reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: postman-test-reports
+          path: 04_Postman-API-Testing/02_Postman-API-CI-Github-Actions/reports/
+
+      - name: Commit test reports
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add 04_Postman-API-Testing/02_Postman-API-CI-Github-Actions/reports/
+          git commit -m "Add Postman test report" || echo "No changes to commit"
+          git push
