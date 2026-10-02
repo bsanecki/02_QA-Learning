@@ -1,4 +1,4 @@
-# Pytest — notatki
+# Pytest - notatki
 
 ## 1. Instalacja i konfiguracja
 
