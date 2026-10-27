@@ -1,11 +1,10 @@
 name: Postman API Tests
 
 on:
-  push:
-  pull_request:
+  workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
 
 jobs:
   api-tests:
@@ -26,7 +25,7 @@ jobs:
       - name: Create report directory
         run: |
           TIMESTAMP=$(date -u +"%Y-%m-%d_%H-%M-%S")
-          echo "REPORT_DIR=04_Postman-API-Testing/02_Postman-API-CI-Github-Actions/reports/$TIMESTAMP" >> $GITHUB_ENV
+          echo "REPORT_DIR=04_Postman-API-Testing/02_Postman-API-CI-Github-Actions/reports/$TIMESTAMP" >> "$GITHUB_ENV"
           mkdir -p "04_Postman-API-Testing/02_Postman-API-CI-Github-Actions/reports/$TIMESTAMP"
 
       - name: Run Postman tests
@@ -42,13 +41,4 @@ jobs:
         with:
           name: postman-test-reports
           path: 04_Postman-API-Testing/02_Postman-API-CI-Github-Actions/reports/
-
-      - name: Commit test reports
-        if: always()
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-
-          git add 04_Postman-API-Testing/02_Postman-API-CI-Github-Actions/reports/
-          git commit -m "Add Postman test report" || echo "No changes to commit"
-          git push
+          if-no-files-found: warn
