@@ -1,37 +1,38 @@
 # QA Learning
 
-A personal learning repository documenting my journey towards becoming a Junior QA / Test Engineer.
+A collection of practical exercises, projects, notes, and learning materials documenting my development towards a career in **QA & Test Automation Engineering**.
 
-The repository contains practical exercises, projects, notes and learning materials related to software testing, test automation, programming and QA tools.
+This repository brings together the tools and concepts I study and practise, from programming fundamentals to automated testing and mobile testing.
 
-## Topics
+## Learning Areas
 
-- Python
-- Pytest
-- SQL
-- Postman & REST API Testing
-- Playwright
-- Appium
-- Jira
-- Docker
-- QA & Software Testing
-- ISTQB
-- Git & GitHub
-- CI/CD
+| Area | What it covers |
+|---|---|
+| [Python](01_Python/) | Programming fundamentals and practical exercises |
+| [pytest](02_Pytest/) | Test automation, test structure, and assertions |
+| [SQL](03_SQL/) | SQL queries and database-related exercises |
+| [Postman & API Testing](04_Postman-API-Testing/) | REST API testing and request validation |
+| [Playwright](05_Playwright/) | Web UI and end-to-end test automation |
+| [Appium](06_Appium/) | Android mobile test automation |
+| [QA Notes](09_QA-Notes/) | Testing concepts, technical notes, and learning summaries in Polish and English |
+| [Certificates](10_Certificates/) | Certificates earned during my learning process |
 
-## Structure
+## Learning Approach
 
-- **01_Python** - Python projects and practical programming
-- **02_Pytest** - pytest exercises and test automation projects
-- **03_SQL** - SQL exercises and database testing projects
-- **04_Postman-API-Testing** - REST API testing with Postman
-- **05_Playwright** - web UI and end-to-end test automation
-- **06_Appium** - mobile test automation
-- **07_Jira** - Jira practice and QA workflows
-- **08_Docker** - Docker and containerization practice
-- **09_QA-Notes** - QA notes and learning materials in Polish and English
-- **10_Certificates** - certificates obtained during the learning process
+My focus is on practical learning. I study the essential concepts, complete exercises, build small projects, and document what I learn.
 
-## Goal
+The goal is to develop skills that can be applied to real testing tasks rather than relying on theory alone.
 
-The goal of this repository is to document my learning process, build practical skills and develop a strong foundation for a career in QA / Test Engineering.
+## QA Portfolio
+
+This repository documents my learning process and supporting materials. For completed QA projects, test automation examples, reports, and practical testing evidence, visit my main portfolio.
+
+**[01 - QA & Test Automation Portfolio](https://github.com/bsanecki/01_QA-Portfolio)**
+
+## About
+
+**Bartosz Sanecki**
+
+QA Testing | Python | Test Automation
+
+[GitHub Profile](https://github.com/bsanecki)
